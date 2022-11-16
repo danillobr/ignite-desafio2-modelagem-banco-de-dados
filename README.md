@@ -22,7 +22,7 @@ A aplicação deve ter uma tabela de gêneros (genres) para que cada jogo possa 
 
 ## :hammer_and_wrench: Modelo conceitual:
 <p align="center">
-  <img src=".github/capa-ignite-nodejs.png" alt="Ignite Node.js">
+  <img src=".github/modelo-conceitual.png" alt="Ignite Node.js">
 </p>
 
 ## :hammer_and_wrench: Esquema relacional:
@@ -31,3 +31,8 @@ A aplicação deve ter uma tabela de gêneros (genres) para que cada jogo possa 
 - **genres**(id_PK, name)
 - **orders**(user_id_FK, game_id_FK, amount, created_at)
 - **receive**(genre_id_FK, game_id_FK) 
+- 
+## :hammer_and_wrench: Modelo relacional:
+<p align="center">
+  <img src=".github/modelo-relacional.png" alt="Ignite Node.js">
+</p>
