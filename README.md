@@ -5,7 +5,7 @@
 <br>
 
 <h1 align="center">
-  Desafio 1: database queries
+  Desafio 2: Modelagem do banco de dados
 </h1>
 
 <br>
@@ -18,20 +18,16 @@
 </p>
 
 ## :computer: Descrição:
-Neste projeto foram implementadas consultas SQL utilizando o TypeORM por meio do: `ORM`, `query builder` e `raw query`. A aplicação de um modo geral possui dois módulos: `users` e `games`, em que um usuário pode ter vários jogos e um mesmo jogo pode estar associado a vários usuários.
+A aplicação deve ter uma tabela de gêneros (genres) para que cada jogo possa ter um ou mais gênero e, além disso, uma tabela orders deve existir para que um usuário consiga comprar um ou mais jogos na mesma compra.
 
-## :hammer_and_wrench: Funcionalidades:
-- Localizar um usuário por meio do `id` e retornar todos os dados do mesmo;
-- Listar todos os usuários pelo `first_name` em ordem alfabética (`ASC`);
-- Encontrar um usuário através do `first_name` e `last_name`;
-- Retornar um ou mais jogos a partir do `title` completo ou fragmento dele;
-- Retornar a quantidade de jogos existentes no banco de dados;
-- Listar todos os usuários que possuem o mesmo jogo.
+## :hammer_and_wrench: Modelo conceitual:
+<p align="center">
+  <img src=".github/capa-ignite-nodejs.png" alt="Ignite Node.js">
+</p>
 
-## :memo: Execução do projeto:
-- Inicializar os serviços do Docker:
-  > sudo service docker start
-- Instalação e execução do banco de dados PostgreSQL:
-  > docker-compose up
-- Execução dos testes:
-  > yarn test
+## :hammer_and_wrench: Esquema relacional:
+- **users**(id_PK, email, first_name, last_name, created_at, update_at)
+- **games**(id_PK, title, created_at, update_at)
+- **genres**(id_PK, name)
+- **orders**(user_id_FK, game_id_FK, amount, created_at)
+- **receive**(genre_id_FK, game_id_FK) 
